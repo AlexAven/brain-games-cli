@@ -1,0 +1,11 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "first project",
+  "author": "Alexander Kazakov",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  }
+}
