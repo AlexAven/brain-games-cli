@@ -1,4 +1,4 @@
-install: # perfoming a clean intall of dependencies
+install: # perfoming a clean intallation of dependencies
 	npm ci
 
 brain-games: # running the game without a global installation
@@ -6,3 +6,6 @@ brain-games: # running the game without a global installation
 
 publish: # publishing package to NPM in a test-mode
 	npm publish --dry-run
+
+lint: # making a eslint code-check according Airbnb Style Guide
+	npx eslint . 
