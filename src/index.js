@@ -8,8 +8,35 @@ const userNameQuerry = () => {
   return name;
 };
 
-const randomNumber = () => Math.floor(Math.random() * 100);
+const randomNumber = () => Math.floor(Math.random() * 101);
 
-const getAnswer = (question) => readlineSync.question(`Question: ${question} `).toLowerCase().trim();
+const randomElementOfArray = (array) => array[Math.floor(Math.random() * (array.length - 1))];
 
-export { userNameQuerry, randomNumber, getAnswer };
+const getAnswer = (question) => {
+  console.log(`Question: ${question}`);
+  return readlineSync.question('Your answer: ').toLowerCase().trim();
+};
+
+const wrongAnswer = (userAnswer, rightAnswer) => {
+  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
+};
+
+const rightAnswer = () => console.log('Correct!');
+
+const gameOver = (tries, user) => {
+  if (tries < 0) {
+    console.log(`Let's try again, ${user}!`);
+  } else {
+    console.log(`Congratulations, ${user}!`);
+  }
+};
+
+export {
+  userNameQuerry,
+  randomNumber,
+  getAnswer,
+  randomElementOfArray,
+  wrongAnswer,
+  rightAnswer,
+  gameOver,
+};
