@@ -1,4 +1,11 @@
-import { userNameQuerry, randomNumber, getAnswer } from '../index.js';
+import {
+  userNameQuerry,
+  randomNumber,
+  getAnswer,
+  wrongAnswer,
+  rightAnswer,
+  gameOver,
+} from '../index.js';
 
 const evenGame = () => {
   const userName = userNameQuerry();
@@ -16,14 +23,13 @@ const evenGame = () => {
       console.log(`Your answer: ${userAnswer}`);
       if (isEven === userAnswer) {
         tries -= 1;
-        console.log('Correct!');
+        rightAnswer();
       } else {
         tries = -1;
-        console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was "${isEven}".`);
+        wrongAnswer(userAnswer, isEven);
       }
     }
-
-    tries < 0 ? console.log(`Let's try again, ${user}!`) : console.log(`Congratulations, ${user}!`);
+    gameOver(tries, user);
   };
 
   isEvenNumber(userName);
