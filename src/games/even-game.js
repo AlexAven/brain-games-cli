@@ -10,7 +10,7 @@ import {
 const evenGame = () => {
   const userName = userNameQuerry();
 
-  const isEvenNumber = (user) => {
+  const isEvenNumber = () => { //user
     let tries = 3;
 
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -29,10 +29,10 @@ const evenGame = () => {
         wrongAnswer(userAnswer, isEven);
       }
     }
-    gameOver(tries, user);
+    gameOver(tries, userName); //user
   };
 
-  isEvenNumber(userName);
+  isEvenNumber(); //userName
 };
 
 export default evenGame;
