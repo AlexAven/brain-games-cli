@@ -20,7 +20,6 @@ const evenGame = () => {
       let isEven;
 
       secretNumber % 2 === 0 ? isEven = 'yes' : isEven = 'no';
-      console.log(`Your answer: ${userAnswer}`);
       if (isEven === userAnswer) {
         tries -= 1;
         rightAnswer();
@@ -29,10 +28,10 @@ const evenGame = () => {
         wrongAnswer(userAnswer, isEven);
       }
     }
-    gameOver(tries, userName); //user
+    gameOver(tries, userName);
   };
 
-  isEvenNumber(); //userName
+  isEvenNumber();
 };
 
 export default evenGame;
