@@ -10,8 +10,6 @@ const userNameQuerry = () => {
 
 const randomNumber = () => Math.floor(Math.random() * 101);
 
-const randomElementOfArray = (array) => array[Math.floor(Math.random() * (array.length - 1))];
-
 const getAnswer = (question) => {
   console.log(`Question: ${question}`);
   return readlineSync.question('Your answer: ').toLowerCase().trim();
@@ -35,7 +33,6 @@ export {
   userNameQuerry,
   randomNumber,
   getAnswer,
-  randomElementOfArray,
   wrongAnswer,
   rightAnswer,
   gameOver,
