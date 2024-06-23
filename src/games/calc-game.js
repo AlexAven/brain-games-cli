@@ -11,6 +11,7 @@ import {
 const calcGame = () => {
   const userName = userNameQuerry();
   let triesReamin = 3;
+
   const calculatings = () => {
     const operators = ['+', '-', '*'];
 

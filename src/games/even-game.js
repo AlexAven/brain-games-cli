@@ -10,25 +10,25 @@ import {
 const evenGame = () => {
   const userName = userNameQuerry();
 
-  const isEvenNumber = () => { //user
-    let tries = 3;
+  const isEvenNumber = () => {
+    let triesRemain = 3;
 
     console.log('Answer "yes" if the number is even, otherwise answer "no".');
-    while (tries > 0) {
+    while (triesRemain > 0) {
       const secretNumber = randomNumber();
       const userAnswer = getAnswer(secretNumber);
       let isEven;
 
       secretNumber % 2 === 0 ? isEven = 'yes' : isEven = 'no';
       if (isEven === userAnswer) {
-        tries -= 1;
+        triesRemain -= 1;
         rightAnswer();
       } else {
-        tries = -1;
+        triesRemain = -1;
         wrongAnswer(userAnswer, isEven);
       }
     }
-    gameOver(tries, userName);
+    gameOver(triesRemain, userName);
   };
 
   isEvenNumber();
