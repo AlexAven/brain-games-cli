@@ -10,6 +10,9 @@ brain-even: # running the even-game without a global installation
 brain-calc: # running the calculation-game without a global installation
 	node bin/brain-calc.js
 
+brain-gcd: # running the GDC-game without a global installation
+	node bin/brain-gcd.js
+
 publish: # publishing package to NPM in a test-mode
 	npm publish --dry-run
 
