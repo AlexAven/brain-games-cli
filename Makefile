@@ -13,6 +13,9 @@ brain-calc: # running the calculation-game without a global installation
 brain-gcd: # running the GDC-game without a global installation
 	node bin/brain-gcd.js
 
+brain-progression: # running the Progression-game without a global installation
+	node bin/brain-progression.js
+
 publish: # publishing package to NPM in a test-mode
 	npm publish --dry-run
 
