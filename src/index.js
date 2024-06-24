@@ -15,12 +15,6 @@ const getAnswer = (question) => {
   return readlineSync.question('Your answer: ').toLowerCase().trim();
 };
 
-const wrongAnswer = (userAnswer, rightAnswer) => {
-  console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'.`);
-};
-
-const rightAnswer = () => console.log('Correct!');
-
 const gameOver = (tries, user) => {
   if (tries < 0) {
     console.log(`Let's try again, ${user}!`);
@@ -29,11 +23,25 @@ const gameOver = (tries, user) => {
   }
 };
 
-export {
-  userNameQuerry,
-  randomNumber,
-  getAnswer,
-  wrongAnswer,
-  rightAnswer,
-  gameOver,
+const gameLogic = (gameRules, callBack, ...callBackArgs) => {
+  const userName = userNameQuerry();
+  let triesRemain = 3;
+
+  console.log(`${gameRules}`);
+  while (triesRemain > 0) {
+    const updatedArgs = callBackArgs.map(item => item());
+    const result = callBack(...updatedArgs);
+    const userAnswer = getAnswer([...updatedArgs].join(' '));
+
+    if (result === userAnswer) {
+      triesRemain -= 1;
+      console.log('Correct!');
+    } else {
+      triesRemain = -1;
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${result}'.`);
+    }
+  }
+  gameOver(triesRemain, userName);
 };
+
+export { randomNumber, gameLogic };

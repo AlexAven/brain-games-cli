@@ -1,11 +1,4 @@
-import {
-  userNameQuerry,
-  randomNumber,
-  getAnswer,
-  wrongAnswer,
-  rightAnswer,
-  gameOver,
-} from '../index.js';
+import { randomNumber, gameLogic } from '../index.js';
 
 const isEvenNumber = (number) => {
   if (number % 2 === 0) {
@@ -15,24 +8,7 @@ const isEvenNumber = (number) => {
 };
 
 const evenGame = () => {
-  const userName = userNameQuerry();
-  let triesRemain = 3;
-
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-  while (triesRemain > 0) {
-    const secretNumber = randomNumber();
-    const userAnswer = getAnswer(secretNumber);
-    const result = isEvenNumber(secretNumber);
-
-    if (result === userAnswer) {
-      triesRemain -= 1;
-      rightAnswer();
-    } else {
-      triesRemain = -1;
-      wrongAnswer(userAnswer, result);
-    }
-  }
-  gameOver(triesRemain, userName);
+  gameLogic('Answer "yes" if the number is even, otherwise answer "no".', isEvenNumber, randomNumber);
 };
 
 export default evenGame;
