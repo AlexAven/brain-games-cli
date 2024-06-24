@@ -12,6 +12,7 @@ const randomNumber = () => Math.floor(Math.random() * 101);
 
 const getAnswer = (question) => {
   console.log(`Question: ${question}`);
+  console.log(`Тип переменной: ${typeof question}`);
   return readlineSync.question('Your answer: ').toLowerCase().trim();
 };
 
@@ -31,7 +32,7 @@ const gameLogic = (gameRules, callBack, ...callBackArgs) => {
   while (triesRemain > 0) {
     const updatedArgs = callBackArgs.map(item => item());
     const result = callBack(...updatedArgs);
-    const userAnswer = getAnswer([...updatedArgs].join(' '));
+    const userAnswer = getAnswer(Array.isArray(updatedArgs) ? updatedArgs.flat().join(' ') : [...updatedArgs]);
 
     if (result === userAnswer) {
       triesRemain -= 1;
