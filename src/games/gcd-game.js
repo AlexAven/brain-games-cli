@@ -1,6 +1,8 @@
 import { randomNumber, gameLogic } from '../index.js';
 
-const findGdcAlorithm = (integer1, integer2) => {
+const findGdcAlorithm = (int1, int2) => {
+  let integer1 = int1;
+  let integer2 = int2;
   while (integer2 !== 0) {
     const remainder = integer1 % integer2;
     integer1 = integer2;

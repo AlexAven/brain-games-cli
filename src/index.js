@@ -29,7 +29,7 @@ const gameLogic = (gameRules, callBack, ...callBackArgs) => {
 
   console.log(`${gameRules}`);
   while (triesRemain > 0) {
-    const updatedArgs = callBackArgs.map(item => item());
+    const updatedArgs = callBackArgs.map((item) => item());
     const result = callBack(...updatedArgs);
     const userAnswer = getAnswer(Array.isArray(updatedArgs) ? updatedArgs.flat().join(' ') : [...updatedArgs]);
 
