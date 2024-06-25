@@ -12,7 +12,6 @@ const randomNumber = () => Math.floor(Math.random() * 101);
 
 const getAnswer = (question) => {
   console.log(`Question: ${question}`);
-  console.log(`Тип переменной: ${typeof question}`);
   return readlineSync.question('Your answer: ').toLowerCase().trim();
 };
 
