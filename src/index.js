@@ -8,8 +8,6 @@ const userNameQuerry = () => {
   return name;
 };
 
-const randomNumber = () => Math.floor(Math.random() * 101);
-
 const getAnswer = (question) => {
   console.log(`Question: ${question}`);
   return readlineSync.question('Your answer: ').toLowerCase().trim();
@@ -44,4 +42,4 @@ const gameLogic = (gameRules, callBack, ...callBackArgs) => {
   gameOver(triesRemain, userName);
 };
 
-export { randomNumber, gameLogic };
+export default gameLogic;

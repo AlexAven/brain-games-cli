@@ -1,4 +1,5 @@
-import { randomNumber, gameLogic } from '../index.js';
+import gameLogic from '../index.js';
+import randomNumber from '../getRandomNumber.js';
 
 const findGdcAlorithm = (int1, int2) => {
   let integer1 = int1;

@@ -1,4 +1,5 @@
-import { randomNumber, gameLogic } from '../index.js';
+import gameLogic from '../index.js';
+import randomNumber from '../getRandomNumber.js';
 
 const isPrime = (number) => {
   for (let i = 2; i < number; i += 1) {
